@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "835393457111",
+    "firebase_url": "https://lemonade-e43ae.firebaseio.com",
+    "project_id": "lemonade-e43ae",
+    "storage_bucket": "lemonade-e43ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835393457111:android:a72ea94eea3917f2",
+        "android_client_info": {
+          "package_name": "net.lemontree.lemonade"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835393457111-9r3jgruq3gba2hfbp5j86qb2j5ddkpmn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxys04q-RXTURpRU8Kij0ERCTsnz7xlpQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

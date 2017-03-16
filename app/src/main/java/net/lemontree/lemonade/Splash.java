@@ -5,9 +5,7 @@ import android.os.Handler;
 import android.os.Bundle;
 import android.view.Window;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.firebase.messaging.FirebaseMessaging;
 
 public class Splash extends Activity {
 
@@ -21,7 +19,7 @@ public class Splash extends Activity {
         // Toast.makeText(getApplicationContext(), "LOADING..", Toast.LENGTH_SHORT).show();
 
         final TextView edittext = (TextView)findViewById(R.id.user_name);
-        edittext.setText("강예찬");
+        edittext.setText("USER_NAME");
 
 
         Handler handler = new Handler();

@@ -18,7 +18,8 @@ import com.unity3d.player.UnityPlayerActivity;
 
 public class MainActivity extends UnityPlayerActivity {
     String toastMessage;
-    String accessToken = "";
+    public static String accessToken = "";
+    public static String playerToken = "";
 
     private static final int SEND_THREAD_TOAST = 0;
 
@@ -41,11 +42,13 @@ public class MainActivity extends UnityPlayerActivity {
         }
     };
 
-    public void init (String token) {
-        accessToken = token;
-        UnityPlayer.UnitySendMessage("_Lemonade", "ReceiveInit", "FAIL");
+    public void init (String acctoken) {
+        accessToken = acctoken;
         // 유저 로그인 성공에 성공했다면 로그인된 유저의 토큰을 보내줌
-        // UnityPlayer.UnitySendMessage("_Lemonade", "ReceiveInit", playerToken);
+
+        //UnityPlayer.UnitySendMessage("_Lemonade", "ReceiveInit", "FAIL");
+        // UnityPlayer.UnitySendMessage("_Lemonade", "ReceiveInit", token);
+        UnityPlayer.UnitySendMessage("_Lemonade", "ReceiveInit", "testtoken");
     }
 
     /**
@@ -67,6 +70,7 @@ public class MainActivity extends UnityPlayerActivity {
         NetworkInfo wifi = manager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
 
         if (wifi.isConnected() || mobile.isConnected()) {
+            // UserLogin(activity);
             Intent intent = new Intent(activity, Splash.class);
             UnityPlayer.currentActivity.startActivity(intent);
         } else {
@@ -74,18 +78,28 @@ public class MainActivity extends UnityPlayerActivity {
         }
     }
 
-    private void getUserLogin() {
+    private void UserLogin(Activity activity) {
         SharedPreferences data = getSharedPreferences("data", MODE_PRIVATE);
-        String token =  data.getString("LA_USER_TOKEN", "");
+        playerToken =  data.getString("LA_USER_TOKEN", "");
 
-        if (token.equals(""))
+        if (playerToken.equals(""))
         {
-            // 로그인 되어 있지 않음 || 처음 로그인
+            // < 로그인 되어 있지 않음 || 처음 로그인 >
+
             // 서비스 앱 (레몬에이드)로 이동하여 로그인 되있는 유저정보 받아옴
+
+            // 받아온 후에 저장 함
+            SharedPreferences.Editor editor = data.edit();
+            editor.putString("LA_USER_TOKEN", "");
+            editor.commit();
         }
         else
         {
+            // < 로그인 되어 있음 >
 
+            // Splash 창
+            Intent intent = new Intent(activity, Splash.class);
+            UnityPlayer.currentActivity.startActivity(intent);
         }
     }
 }

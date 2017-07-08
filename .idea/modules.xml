@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/lemonade-android-plugin-unity.iml" filepath="$PROJECT_DIR$/lemonade-android-plugin-unity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lemonade-android-api.iml" filepath="$PROJECT_DIR$/lemonade-android-api.iml" />
     </modules>
   </component>
 </project>

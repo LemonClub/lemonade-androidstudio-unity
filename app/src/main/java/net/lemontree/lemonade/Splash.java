@@ -18,9 +18,11 @@ public class Splash extends Activity {
 
         // Toast.makeText(getApplicationContext(), "LOADING..", Toast.LENGTH_SHORT).show();
 
-        final TextView edittext = (TextView)findViewById(R.id.user_name);
-        edittext.setText("USER_NAME");
+        final TextView nameTxt = (TextView)findViewById(R.id.user_name);
+        nameTxt.setText("USER_NAME");
 
+        final TextView lvTxt = (TextView)findViewById(R.id.user_name);
+        lvTxt.setText("Lv. 1");
 
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
